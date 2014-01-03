@@ -20,44 +20,14 @@ quicksort([], []).
 quicksort([H|[]], [H]).
 
 
-% quicksort([H|T], Sorted):-
-% 	partition([H|T], H-1, Parti1, Parti2),
-% 	(
-% 	 length([H|T])>1,
-% 	 (
-% 	 Parti1=[H|T]; Parti2=[H|T]
-% 	 ),
-	 
-% 	;
-% 	 quicksort(Parti1, Sorted1),
-% 	 quicksort(Parti2, Sorted2),
-% 	 append(Sorted1, Sorted2, Sorted)
-% 	 ).
-
-% quicksort([H|T], Sorted):-
-% 	P is H+1,
-% 	partition([H|T], P, Parti1, Parti2),
-% 	(
-% 	 Parti1=[],
-% 	 quicksort(Parti2, Sorted)
-% 	;
-% 	 Parti2=[],
-% 	 quicksort(Parti1, Sorted)
-% 	;
-% 	 quicksort(Parti1, Sorted1),
-% 	 quicksort(Parti2, Sorted2),
-% 	 append(Sorted1, Sorted2, Sorted)
-% 	).
-
-
-quicksort([A,B], [A,B]):-
-	A < B.
-
-quicksort([A,B], [B, A]):-
-	\+ A < B.
-
 quicksort([H|T], Sorted):-
 	 partition([H|T], H, Parti1, Parti2),
-	 quicksort(Parti1, Sorted1),
-	 quicksort(Parti2, Sorted2),
-	 append(Sorted1, Sorted2, Sorted).
+	 (
+	  [H|T]=Parti1,
+	  quicksort(T, Sorted1),
+	  Sorted=[H|Sorted1]
+	 ;
+	  quicksort(Parti1, Sorted1),
+	  quicksort(Parti2, Sorted2),
+	  append(Sorted1, Sorted2, Sorted)
+	 ).
