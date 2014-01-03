@@ -2,7 +2,7 @@
 partition([], _, [], []).
 
 partition([H|T], P, Parti1, Parti2):-
-	H < P,
+	H < P,!,
 	partition(T, P, RestParti1, Parti2),
 	Parti1 = [H|RestParti1].
 
