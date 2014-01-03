@@ -1,10 +1,24 @@
 
 partition([], _, [], []).
 
-partition([A,B], _, [A], [B]):-
+partition([A,B], P, [A], [B]):-
+	(
+	 P<A,
+	 P<B
+	;
+	 \+ P<A,
+	 \+ P<B
+	),
 	A < B.
 
 partition([A,B], _, [B], [A]):-
+	(
+	 P<A,
+	 P<B
+	;
+	 \+ P<A,
+	 \+ P<B
+	),
 	\+ A < B.
 
 partition([H|T], P, Parti1, Parti2):-
@@ -56,7 +70,7 @@ quicksort([H|[]], [H]).
 
 
 quicksort([H|T], Sorted):-
-	 partition([H|T], H-1, Parti1, Parti2),
+	 partition([H|T], H, Parti1, Parti2),
 	 quicksort(Parti1, Sorted1),
 	 quicksort(Parti2, Sorted2),
 	 append(Sorted1, Sorted2, Sorted).
