@@ -11,7 +11,7 @@ partition([A,B], P, [A], [B]):-
 	),
 	A < B.
 
-partition([A,B], _, [B], [A]):-
+partition([A,B], P, [B], [A]):-
 	(
 	 P<A,
 	 P<B
