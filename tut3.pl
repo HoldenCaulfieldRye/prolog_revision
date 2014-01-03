@@ -39,7 +39,7 @@ quicksort([H|T], Sorted):-
 	 Parti2=[],
 	 quicksort(Parti1, Sorted)
 	;
-	quicksort(Parti1, Sorted1),
-	quicksort(Parti2, Sorted2),
-	append(Sorted1, Sorted2, Sorted)
-	).
+	 quicksort(Parti1, Sorted1),
+	 quicksort(Parti2, Sorted2)
+	),
+	append(Sorted1, Sorted2, Sorted).
