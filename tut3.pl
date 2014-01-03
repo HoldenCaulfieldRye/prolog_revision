@@ -34,7 +34,8 @@ quicksort([H|[]], [H]).
 % 	 ).
 
 quicksort([H|T], Sorted):-
-	partition([H|T], H+1, Parti1, Parti2),
+	P is H+1,
+	partition([H|T], P, Parti1, Parti2),
 	(
 	 Parti1=[],
 	 quicksort(Parti2, Sorted)
