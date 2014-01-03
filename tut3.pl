@@ -12,10 +12,13 @@ partition([H|T], P, Parti1, Parti2):-
 	Parti2 = [H|RestParti2].
 
 
+
+quicksort([], []).
+
 quicksort([H], [H]).
 
 quicksort([H|T], Sorted):-
 	partition([H|T], H, Parti1, Parti2),
 	quicksort(Parti1, Sorted1),
 	quicksort(Parti2, Sorted2),
-	append(Parti1, Parti2, Sorted).
+	append(Sorted1, Sorted2, Sorted).
