@@ -23,9 +23,9 @@ quicksort([H|[]], [H]).
 quicksort([H|T], Sorted):-
 	 partition([H|T], H, Parti1, Parti2),
 	 (
-	  [H|T]=Parti1,
-	  quicksort(T, Sorted1),
-	  Sorted=[H|Sorted1]
+	  [H|T]=Parti2,
+	  quicksort(T, Sorted2),
+	  Sorted=[H|Sorted2]
 	 ;
 	  quicksort(Parti1, Sorted1),
 	  quicksort(Parti2, Sorted2),
