@@ -1,8 +1,21 @@
-andgate(And).
+andgate('And').
 
-orgate(Or).
+orgate('Or').
 
-xorgate(Xor).
+xorgate('Xor').
+
+input1('And', 1).
+
+input2('And', 0).
+
+input1('Or', 1).
+
+input2('Or', 0).
+
+input1('Xor', 1).
+
+input2('Xor', 0).
+
 
 
 % and gate
@@ -30,7 +43,7 @@ output(G,1):-
 
 % xor gate
 output(G,1):-
-	orgate(G),
+	xorgate(G),
 	(
 	 input1(G,1),
 	 input2(G,0)
@@ -40,7 +53,7 @@ output(G,1):-
 	).
 
 output(G,0):-
-	orgate(G),
+	xorgate(G),
 	\+ output(G,1).
 
 	 
