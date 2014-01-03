@@ -1,0 +1,20 @@
+stupid mistakes:
+- don't forget to reconsult after changes
+- not size(), not sizeof(), not len(), but length()
+- not append(List, A, New) but append(List, [A], New)
+- 
+
+key predicates:
+- sort(A, SortedA)
+- reverse(A, reversedA)
+
+singleton variables:
+- to state facts about fixed variables, don't use variable notation,
+use inverted commas. eg 
+andgate('And'). rather than andgate(And).
+
+
+insufficient memory:
+- with recursive functions, always make recursive call asap
+
+
