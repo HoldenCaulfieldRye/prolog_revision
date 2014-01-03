@@ -50,10 +50,10 @@ quicksort([H|[]], [H]).
 % 	).
 
 
-partition([A,B], [A,B]):-
+quicksort([A,B], [A,B]):-
 	A < B.
 
-partition([A,B], [B, A]):-
+quicksort([A,B], [B, A]):-
 	\+ A < B.
 
 quicksort([H|T], Sorted):-
