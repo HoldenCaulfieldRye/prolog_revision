@@ -6,3 +6,10 @@ followedBy(A, B, [H|T]):-
 
 followedBy(A, B, [_|T]):-
 	followedBy(A, B, T).
+
+
+nextTo(A, B, L):-
+	followedBy(A, B, L).
+
+nextTo(A, B, L):-
+	followedBy(B, A, L).
