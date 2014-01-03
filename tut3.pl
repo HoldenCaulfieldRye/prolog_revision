@@ -1,16 +1,12 @@
-mysort([X], [X]).
 
-mysort([H|T], SortedA):-
+partition([], _, []).
 
-
-partition([], P, []).
-
-partition([H|T], P, Partitioned):-
+partition([H,T], P, Partitioned):-
 	H < P,
 	Partitioned = [H|RestPartitioned],
 	partition(T, P, RestPartitioned).
 
-partition([H|T], P, Partitioned):-
+partition([H,T], P, Partitioned):-
 	\+ H < P,
 	Partitioned = [RestPartitioned, H],
 	partition(T, P, RestPartitioned).
