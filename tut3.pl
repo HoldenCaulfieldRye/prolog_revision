@@ -1,15 +1,15 @@
 
 partition([], _, []).
 
-partition([H,T], P, Partitioned):-
+partition([H|T], P, Partitioned):-
 	H < P,
-	Partitioned = [H|RestPartitioned],
-	partition(T, P, RestPartitioned).
+	partition(T, P, RestPartitioned),
+	Partitioned = [H|RestPartitioned].
 
-partition([H,T], P, Partitioned):-
+partition([H|T], P, Partitioned):-
 	\+ H < P,
-	Partitioned = [RestPartitioned, H],
-	partition(T, P, RestPartitioned).
+	partition(T, P, RestPartitioned),
+	append(RestPartitioned, H, Partitioned).
 
 	
 % quicksort([A,P,B], Sorted):-
