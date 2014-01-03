@@ -1,19 +1,20 @@
 
-partition([], _, []).
+partition([], _, [], []).
 
-partition([H|T], P, Partitioned):-
+partition([H|T], P, Parti1, Parti2):-
 	H < P,
-	partition(T, P, RestPartitioned),
-	Partitioned = [H|RestPartitioned].
+	partition(T, P, RestParti1, Parti2),
+	Parti1 = [H|RestParti1].
 
-partition([H|T], P, Partitioned):-
+partition([H|T], P, Parti1, Parti2):-
 	\+ H < P,
-	partition(T, P, RestPartitioned),
-	append(RestPartitioned, H, Partitioned).
+	partition(T, P, Parti1, RestParti2),
+	Parti2 = [H|RestParti2].
 
-	
-% quicksort([A,P,B], Sorted):-
-% 	partition(A,P),
-% 	partition(B,P),
-% 	quicksort(A),
-% 	quicksort(B).
+
+quicksort([H], [H]).
+
+quicksort([H|T], Sorted):-
+	partition([H|T], H, Parti1, Parti2),
+	quicksort(Parti1, Sorted1),
+	quicksort(Parti2, Sorted2).
