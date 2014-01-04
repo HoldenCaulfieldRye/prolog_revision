@@ -14,7 +14,12 @@ max(E,[H|T]):-
 
 
 
-max_of_all(E, [[E]]).
+max_of_all(E, [List]):-
+	max(E, List).
+
+max_of_all(E, [HList|TList]):-
+	HList = [],
+	max_of_all(E, TList).
 
 max_of_all(E, [HList|TList]):-
 	max_of_all(X, TList),
