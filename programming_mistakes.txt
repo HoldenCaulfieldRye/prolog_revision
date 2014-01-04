@@ -17,4 +17,5 @@ andgate('And'). rather than andgate(And).
 insufficient memory:
 - with recursive functions, always make recursive call asap
 
-
+mysort():
+- you can write your own in 1 predicate using setof()
