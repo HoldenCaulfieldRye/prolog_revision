@@ -17,12 +17,9 @@ followedBy([H1|T1], [H2|T2], [H3|T3]):-
 	).
 
 
-contained(H, [H|T]).
+contained(L1, L2):-
+	append(L1, _, L2).
 
-contained([H1|T1], [H|T]):-
-	H1 = H,
-	contained(T1, T).
-
-contained(L, [H|T]):-
+contained(L, [_|T]):-
 	contained(L, T). 
 
