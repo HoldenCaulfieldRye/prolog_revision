@@ -1,7 +1,9 @@
 stupid mistakes:
-- don't forget to reconsult after changes
 - not size(), not sizeof(), not len(), but length()
 - not append(List, A, New) but append(List, [A], New)
+- if complex, use helper predicates to break problem down
+  sounds obvious, but all your practice has been on predicates
+  which don't require helper ones, so you're not used to it!
 
 
 key predicates:
