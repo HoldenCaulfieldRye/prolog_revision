@@ -14,6 +14,10 @@ key predicates:
 - setof(X, G, L) orders AND removes duplicates
 
 
+emacs trick:
+C-<number> <character>
+types <character> <number> times
+
 singleton variables:
 - to state facts about fixed variables, don't use variable notation,
 use inverted commas. eg 
