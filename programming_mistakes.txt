@@ -2,13 +2,17 @@ stupid mistakes:
 - don't forget to reconsult after changes
 - not size(), not sizeof(), not len(), but length()
 - not append(List, A, New) but append(List, [A], New)
-- 
+
 
 key predicates:
 - sort(A, SortedA)
 - reverse(A, reversedA)
 - append(L1, L2, L1andL2)
 - member(X, L)
+- length(L, X)
+- findall(X, G, L)
+- setof(X, G, L) orders AND removes duplicates
+
 
 singleton variables:
 - to state facts about fixed variables, don't use variable notation,
@@ -19,5 +23,15 @@ andgate('And'). rather than andgate(And).
 insufficient memory:
 - with recursive functions, always make recursive call asap
 
+
 mysort():
 - you can write your own in 1 predicate using setof()
+
+
+findall(X, G, L) vs setof:
+- findall takes all bindings, for all unbound variables in G, for all
+solutions to G	
+- setof takes all bindings, for unbound variables in G AND NOT IN X,
+for all solutions to G
+- setof additionally orders the list in ascending order and removes duplicates
+- see ListsSetofEx/parents.pl
