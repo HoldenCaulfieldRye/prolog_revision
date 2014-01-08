@@ -28,10 +28,18 @@ mysort():
 - you can write your own in 1 predicate using setof()
 
 
+setof(X, G, L):
+- setof additionally orders the list in ascending order and
+  removes duplicates
+- to make setof accumulate into 1 list like findall, use ^
+- CRUCIAL stuff to remember about ^
+  see ListsSetofEx/parents.pl
+
+
 findall(X, G, L) vs setof:
 - findall takes all bindings, for all unbound variables in G, for all
 solutions to G	
 - setof takes all bindings, for unbound variables in G AND NOT IN X,
 for all solutions to G
-- setof additionally orders the list in ascending order and removes duplicates
+- use maximum ^ to get setof to accumulate like findall
 - see ListsSetofEx/parents.pl
