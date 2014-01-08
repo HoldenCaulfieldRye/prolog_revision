@@ -4,11 +4,14 @@ stupid mistakes:
 - not append(List, A, New) but append(List, [A], New)
 - 
 
+
 key predicates:
 - sort(A, SortedA)
 - reverse(A, reversedA)
 - append(L1, L2, L1andL2)
 - member(X, L)
+- length(L, X)
+
 
 singleton variables:
 - to state facts about fixed variables, don't use variable notation,
@@ -19,5 +22,7 @@ andgate('And'). rather than andgate(And).
 insufficient memory:
 - with recursive functions, always make recursive call asap
 
+
 mysort():
 - you can write your own in 1 predicate using setof()
+
