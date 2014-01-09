@@ -6,7 +6,8 @@ stupid mistakes:
   which don't require helper ones, so you're not used to it!
 
 
-key predicates:
+key predefined predicates:
+- is_list(L)
 - sort(A, SortedA)
 - reverse(A, reversedA)
 - append(L1, L2, L1andL2)
@@ -16,9 +17,15 @@ key predicates:
 - setof(X, G, L) orders AND removes duplicates
 
 
-emacs trick:
+emacs tricks:
 C-<number> <character>
 types <character> <number> times
+//
+C-_
+undoes with more freedom than C-x u
+//
+C-g C-_
+redo with same freedom
 
 
 singleton variables:
