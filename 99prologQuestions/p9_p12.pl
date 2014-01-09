@@ -37,10 +37,14 @@ pack([H|T], [H1|T1]):-
 	T1 = [H2|T2].
 
 
-%%%%%%%% P10 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%% P10/P11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+convert_one([X], X):-
+	length([X], 1).
 
 convert_one(H, [X,Y]):-
 	length(H, X),
+	\+ X is 1,
 	[Y|_] = H.
 
 
@@ -54,4 +58,4 @@ convert([H1|T1], [H2|T2]):-
 encode_modified(L1, L2):-
 	pack(L1, L),
 	convert(L, L2).
-	
+
