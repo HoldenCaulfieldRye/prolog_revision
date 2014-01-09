@@ -61,5 +61,5 @@ for all solutions to G
 
 
 failures:
-- flatten a nested list structure
-- 
+- P7, flatten a nested list structure
+- P9 succeeded but took you ages
