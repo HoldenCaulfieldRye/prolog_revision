@@ -20,14 +20,16 @@ emacs trick:
 C-<number> <character>
 types <character> <number> times
 
+
 singleton variables:
 - to state facts about fixed variables, don't use variable notation,
 use inverted commas. eg 
 andgate('And'). rather than andgate(And).
 
 
-insufficient memory:
-- with recursive functions, always make recursive call asap
+recursion:
+- treat the head, recursively call the tail, append the two
+- always make recursive call asap
 
 
 mysort():
@@ -49,3 +51,8 @@ solutions to G
 for all solutions to G
 - use maximum ^ to get setof to accumulate like findall
 - see ListsSetofEx/parents.pl
+
+
+failures:
+- flatten a nested list structure
+- 
