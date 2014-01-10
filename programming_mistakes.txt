@@ -7,14 +7,16 @@ stupid mistakes:
 
 
 key predefined predicates:
+:- use_module(library(lists)). REQUIRED! (for some)
 - is_list(L)
-- sort(A, SortedA)
-- reverse(A, reversedA)
+- sort(A, SortedA)             REMEMBER!
+- reverse(A, reversedA)        REMEMBER!
 - append(L1, L2, L1andL2)
 - member(X, L)
 - length(L, X)
 - findall(X, G, L)
 - setof(X, G, L) orders AND removes duplicates
+- use '!;' for 'if above fails, do this'
 
 
 emacs tricks:
