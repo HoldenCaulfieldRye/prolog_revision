@@ -1,0 +1,54 @@
+:-use_module(library(lists)).
+
+
+% child_mother(C, M) means C is a child of mother M.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+child_mother(amy, mary).
+child_mother(arthur, mary).
+child_mother(angel, jane).
+child_mother(anton, rita).
+child_mother(alan, rita).
+child_mother(axel, susan).
+child_mother(ann, tina).    
+
+
+% age(C, A) means C is of age A.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+age(amy, 6).
+age(arthur, 15).
+age(angel, 16).
+age(anton, 4).
+age(alan, 8).
+age(axel, 16).
+age(ann, 4).
+
+% employed(X) means X is employed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+employed( susan).
+employed(rita).
+
+
+
+ecb(X):- child_mother(C, X), age(C, A), A=<14.
+ecb(X):- child_mother(C,X), age(C, A), A>14, A=<16, \+ employed(X).
+
+mother_of_the_youngest(M):- setof(A-Mum, C^(child_mother(C, Mum), age(C, A)), L), L=[A-M| Rest].
+
+mothers_of_young(LM) :- setof(M, C^A^(child_mother(C, M), age(C, A), A=<10), LM).
+
+
+%  employed_ecb(LM):- setof(M, (employed(M), ecb(M)), LM).
+
+
+
+
+findElement(N, L, E) :- N>0, length(L, LN), LN>=N, M is N-1, append(L1, L2, L), length(L1, M), L2=[E|Rest].
+
+
+merge([], L2, L2).
+merge(L1, [], L1).
+merge([X|Xs],[Y|Ys], [X|T]):- X=<Y, merge(Xs,[Y|Ys], T).
+merge([X|Xs],[Y|Ys], [Y|T]):- X>Y, merge([X|Xs],Ys, T).  

@@ -1,0 +1,46 @@
+
+
+:-  ensure_loaded(run_query_utilities).
+
+
+
+
+
+%%  "276 Prolog: Exercise 6 (Practice Lexis Test)").
+
+
+
+%% :-  ensure_loaded(practice_Q1_prison_model). 
+
+:-  ensure_loaded(practice_Q1_prison).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Question 1 - prison database   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+:- format("~n~n-------Question 1---~n~n", []).
+
+
+
+
+:- run_query('Cell' = Cell : empty_cell(Cell) ).
+
+:- run_query('Cell' = Cell : all_female_cell(Cell) ).
+
+:- run_query('N' = N : female_prisoners(N) ).
+
+:- run_query(('Cell','N') = (Cell,N) : cell_occupancy(Cell,N) ). 
+
+:- run_query('Cell' = Cell : fullest_cell(Cell) ).
+
+
+:- run_query(('S','F','Crime','T') = (S,F,Crime,T) : worst_psychopath(S,F,Crime,T) ).
+
+
+:- run_query(('Crime','N')=(Crime,N) : criminals(Crime,N) ).

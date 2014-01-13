@@ -1,0 +1,201 @@
+
+
+-------Question 1---
+
+
+**testing query: empty_cell(Cell)
+   Cell = 2
+   Cell = 5
+   Cell = 23
+   Cell = 27
+   Cell = 29
+   Cell = 45
+   Cell = 49
+   Cell = 66
+   Cell = 81
+   Cell = 85
+   Cell = 88
+   Cell = 91
+   Cell = 94
+   Cell = 95
+   Cell = 108
+   Cell = 110
+   Cell = 111
+   Cell = 126
+   Cell = 128
+No more solutions
+
+
+**testing query: all_female_cell(Cell)
+   Cell = 17
+   Cell = 30
+   Cell = 32
+   Cell = 43
+   Cell = 82
+   Cell = 131
+No more solutions
+
+
+**testing query: female_prisoners(N)
+   N = 65
+No more solutions
+
+
+**testing query: cell_occupancy(Cell,N)
+   Cell,N = 1,3
+   Cell,N = 2,0
+   Cell,N = 3,2
+   Cell,N = 4,2
+   Cell,N = 5,0
+   Cell,N = 6,2
+   Cell,N = 7,2
+   Cell,N = 8,3
+   Cell,N = 9,4
+   Cell,N = 10,2
+   Cell,N = 11,4
+   Cell,N = 12,5
+   Cell,N = 13,1
+   Cell,N = 14,5
+   Cell,N = 15,1
+   Cell,N = 16,4
+   Cell,N = 17,1
+   Cell,N = 18,3
+   Cell,N = 19,1
+   Cell,N = 20,3
+   Cell,N = 21,3
+   Cell,N = 22,4
+   Cell,N = 23,0
+   Cell,N = 24,3
+   Cell,N = 25,1
+   Cell,N = 26,4
+   Cell,N = 27,0
+   Cell,N = 28,1
+   Cell,N = 29,0
+   Cell,N = 30,1
+   Cell,N = 31,6
+   Cell,N = 32,1
+   Cell,N = 33,2
+   Cell,N = 34,5
+   Cell,N = 35,2
+   Cell,N = 36,2
+   Cell,N = 37,3
+   Cell,N = 38,4
+   Cell,N = 39,2
+   Cell,N = 40,4
+   Cell,N = 41,2
+   Cell,N = 42,1
+   Cell,N = 43,1
+   Cell,N = 44,1
+   Cell,N = 45,0
+   Cell,N = 46,1
+   Cell,N = 47,2
+   Cell,N = 48,1
+   Cell,N = 49,0
+   Cell,N = 50,2
+   Cell,N = 51,3
+   Cell,N = 52,2
+   Cell,N = 53,3
+   Cell,N = 54,3
+   Cell,N = 55,3
+   Cell,N = 56,6
+   Cell,N = 57,4
+   Cell,N = 58,1
+   Cell,N = 59,2
+   Cell,N = 60,4
+   Cell,N = 61,1
+   Cell,N = 62,4
+   Cell,N = 63,4
+   Cell,N = 64,3
+   Cell,N = 65,2
+   Cell,N = 66,0
+   Cell,N = 67,2
+   Cell,N = 68,2
+   Cell,N = 69,2
+   Cell,N = 70,2
+   Cell,N = 71,2
+   Cell,N = 72,3
+   Cell,N = 73,5
+   Cell,N = 74,1
+   Cell,N = 75,2
+   Cell,N = 76,2
+   Cell,N = 77,1
+   Cell,N = 78,1
+   Cell,N = 79,1
+   Cell,N = 80,2
+   Cell,N = 81,0
+   Cell,N = 82,2
+   Cell,N = 83,2
+   Cell,N = 84,2
+   Cell,N = 85,0
+   Cell,N = 86,4
+   Cell,N = 87,2
+   Cell,N = 88,0
+   Cell,N = 89,2
+   Cell,N = 90,2
+   Cell,N = 91,0
+   Cell,N = 92,2
+   Cell,N = 93,5
+   Cell,N = 94,0
+   Cell,N = 95,0
+   Cell,N = 96,1
+   Cell,N = 97,2
+   Cell,N = 98,3
+   Cell,N = 99,1
+   Cell,N = 100,1
+   Cell,N = 101,2
+   Cell,N = 102,1
+   Cell,N = 103,5
+   Cell,N = 104,3
+   Cell,N = 105,2
+   Cell,N = 106,1
+   Cell,N = 107,4
+   Cell,N = 108,0
+   Cell,N = 109,2
+   Cell,N = 110,0
+   Cell,N = 111,0
+   Cell,N = 112,4
+   Cell,N = 113,1
+   Cell,N = 114,1
+   Cell,N = 115,1
+   Cell,N = 116,2
+   Cell,N = 117,3
+   Cell,N = 118,3
+   Cell,N = 119,1
+   Cell,N = 120,3
+   Cell,N = 121,2
+   Cell,N = 122,4
+   Cell,N = 123,2
+   Cell,N = 124,2
+   Cell,N = 125,2
+   Cell,N = 126,0
+   Cell,N = 127,1
+   Cell,N = 128,0
+   Cell,N = 129,1
+   Cell,N = 130,2
+   Cell,N = 131,1
+   Cell,N = 132,3
+No more solutions
+
+
+**testing query: fullest_cell(Cell)
+   Cell = 31
+   Cell = 56
+No more solutions
+
+
+**testing query: worst_psychopath(S,F,Crime,T)
+   S,F,Crime,T = Magee,Ian,murder,38
+   S,F,Crime,T = Yang,Sophia,murder,38
+No more solutions
+
+
+**testing query: criminals(Crime,N)
+   Crime,N = assault,38
+   Crime,N = attempted_murder,44
+   Crime,N = burglary,30
+   Crime,N = murder,41
+   Crime,N = plagiarism,34
+   Crime,N = rape,47
+   Crime,N = robbery,36
+No more solutions
+

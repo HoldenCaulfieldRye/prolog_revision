@@ -1,0 +1,72 @@
+
+
+-------Question 2(a)---
+
+
+**testing query: merge_ordered([],[a,e,i,l,m,p,r],Merged)
+   Merged = [a,e,i,l,m,p,r]
+No more solutions
+
+
+**testing query: merge_ordered([c,g,i,m,n,o,p,t,u],[],Merged)
+   Merged = [c,g,i,m,n,o,p,t,u]
+No more solutions
+
+
+**testing query: merge_ordered([c,g,i,m,n,o,p,t,u],[a,e,i,l,m,p,r],Merged)
+   Merged = [a,c,e,g,i,l,m,n,o,p,r,t,u]
+No more solutions
+
+
+**testing query: merge_ordered([c,g,i,m,n,o,p,t,u,e(b,k)],[a,e,i,l,m,p,r,e(b,f),e(b,k)],Merged)
+   Merged = [a,c,e,g,i,l,m,n,o,p,r,t,u,e(b,f),e(b,k)]
+No more solutions
+
+
+
+-------Question 2(b)---
+
+
+**testing query: hf_to_graph_term([a,b,c,a],Graph)
+   Graph = graph([a,b,c],[])
+No more solutions
+
+
+**testing query: hf_to_graph_term([b>f,f>c,c>b,g>h,g>g,d,b,f>k,k>f,f>c],Graph)
+   Graph = graph([b,c,d,f,g,h,k],[e(b,f),e(c,b),e(f,c),e(f,k),e(g,g),e(g,h),e(k,f)])
+No more solutions
+
+
+**testing query: hf_to_graph_term([s,s>r,t,u>r,s>u,u>s,v>u],Graph)
+   Graph = graph([r,s,t,u,v],[e(s,r),e(s,u),e(u,r),e(u,s),e(v,u)])
+No more solutions
+
+
+**testing query: hf_to_graph_term([p>q,m>q,q>m,m>p,p>p],Graph)
+   Graph = graph([m,p,q],[e(m,p),e(m,q),e(p,p),e(p,q),e(q,m)])
+No more solutions
+
+
+
+-------Question 2(c)---
+
+
+**testing query: graph_term_to_adj_list(graph([a,b,c],[]),AdjList)
+   AdjList = [n(a,[]),n(b,[]),n(c,[])]
+No more solutions
+
+
+**testing query: graph_term_to_adj_list(graph([b,c,d,f,g,h,k],[e(b,f),e(c,b),e(f,c),e(f,k),e(g,g),e(g,h),e(k,f)]),AdjList)
+   AdjList = [n(b,[f]),n(c,[b]),n(d,[]),n(f,[c,k]),n(g,[g,h]),n(h,[]),n(k,[f])]
+No more solutions
+
+
+**testing query: graph_term_to_adj_list(graph([r,s,t,u,v],[e(s,r),e(s,u),e(u,r),e(u,s),e(v,u)]),AdjList)
+   AdjList = [n(r,[]),n(s,[r,u]),n(t,[]),n(u,[r,s]),n(v,[u])]
+No more solutions
+
+
+**testing query: graph_term_to_adj_list(graph([m,p,q],[e(m,p),e(m,q),e(p,p),e(p,q),e(q,m)]),AdjList)
+   AdjList = [n(m,[p,q]),n(p,[p,q]),n(q,[m])]
+No more solutions
+

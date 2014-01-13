@@ -1,0 +1,49 @@
+:- use_module(library(lists )).
+
+remove_item(E, L, L):- \+ member(E,L), !.
+remove_item(E, [E|R], NR):- remove_item(E, R, NR),!.
+remove_item(E, [X|R], [X|NR]):- \+ X=E, remove_item(E, R, NR). 
+
+
+drop_items(L,N,[]):- length(L,NL), NL=<N. 
+drop_items(L,N,L2):- append(L1,L2,L), length(L1,N).  
+
+
+
+drop_more_items(L, N, []):- drop_items(L,N,[]), !.
+drop_more_items(L, N, R):- append(L1,L2,L), length(L1,N), remove_all(L1,L2,R).
+remove_all([],L2,L2).
+remove_all([X|L],L2,R):- remove_item(X,L2,NL2), remove_all(L,NL2,R).
+
+
+count(L, Result) :- aux_count(L, Result, []).
+aux_count([], Res, Res).
+aux_count([X|Y], Res, Acc) :- member((X,N), Acc), N1 is N+1, 
+		remove_item((X,N), Acc, Acc1), 
+		aux_count(Y, Res, [(X, N1)|Acc1]).
+aux_count([X|Y], Res, Acc) :- \+ member((X,N), Acc), 
+		aux_count(Y, Res, [(X, 1)|Acc]).
+
+
+%%% Alternative solution  %%%%
+
+alt_count([], []) :- !.
+alt_count(L, Result) :- setof((I,N), (member(I,L), occurrences(I, L, N)), Result).
+occurrences(I, L, N) :- remove_item(I, L, NL), length(L, L1), length(NL, L2), 
+		N is L1-L2.
+
+
+% add_up_list(L,K) :- aux(L,K,0).
+% aux([],[],_).
+% aux([X|L],[Y|K],Z) :- Y is Z+X, aux(L,K,Y).
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 10, 15, 25, 25 (total 75)
+
+% Marking scheme 15, 15, 20, 100 (total 150) for 2(i)-2(iv), respectively. 
+% Please do not take away marks for lack of efficiency or style.
+% You can take away marks if a program is complicated and it is not commented adequately.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

@@ -1,0 +1,71 @@
+
+
+:- ensure_loaded(run_query_utilities).
+
+
+
+
+
+%%  "276 Prolog: Exercise 6 (Practice Lexis Test)").
+
+
+
+%% :-  ensure_loaded(practice_Q2_graphs_model).
+:-  ensure_loaded(practice_Q2_graphs).
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Question 2 - graphs            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+:- format("~n~n-------Question 2(a)---~n~n", []).
+
+
+:- Left = [], sort([i,m,p,e,r,i,a,l], Right),
+   run_query('Merged' = Merged :  merge_ordered(Left,Right,Merged) ).
+
+:- sort([c,o,m,p,u,t,i,n,g], Left), Right = [],
+   run_query('Merged' = Merged :  merge_ordered(Left,Right,Merged) ).
+
+:- sort([c,o,m,p,u,t,i,n,g], Left), sort([i,m,p,e,r,i,a,l], Right),
+   run_query('Merged' = Merged :  merge_ordered(Left,Right,Merged) ).
+
+:- sort([e(b,k),c,o,m,p,u,t,i,n,g], Left), sort([i,m,p,e,r,i,a,l,e(b,k),e(b,f)], Right),
+   run_query('Merged' = Merged :  merge_ordered(Left,Right,Merged) ).
+
+% -- Part (b)
+
+:- format("~n~n-------Question 2(b)---~n~n", []).
+
+:- Hform = [a,b,c,a],
+   run_query('Graph' = Graph : hf_to_graph_term(Hform,Graph) ).
+
+:- testgraph(g1,Hform,_Graph,_AdjList),
+   run_query('Graph' = Graph : hf_to_graph_term(Hform,Graph) ).
+   
+:- testgraph(g2,Hform,_Graph,_AdjList),
+   run_query('Graph' = Graph : hf_to_graph_term(Hform,Graph) ).
+
+:- testgraph(g3,Hform,_Graph,_AdjList),
+   run_query('Graph' = Graph : hf_to_graph_term(Hform,Graph) ).
+
+
+% -- Part (c)
+
+:- format("~n~n-------Question 2(c)---~n~n", []).
+
+:- Hform = [a,b,c,a], hf_to_graph_term(Hform,Graph), 
+   run_query('AdjList' = AdjList : graph_term_to_adj_list(Graph,AdjList) ).
+
+:- testgraph(g1,Hform,_Graph,_AdjList), hf_to_graph_term(Hform,Graph), 
+   run_query('AdjList' = AdjList : graph_term_to_adj_list(Graph,AdjList) ).
+   
+:- testgraph(g2,Hform,_Graph,_AdjList), hf_to_graph_term(Hform,Graph), 
+   run_query('AdjList' = AdjList : graph_term_to_adj_list(Graph,AdjList) ).
+
+:- testgraph(g3,Hform,_Graph,_AdjList), hf_to_graph_term(Hform,Graph), 
+   run_query('AdjList' = AdjList : graph_term_to_adj_list(Graph,AdjList) ).
