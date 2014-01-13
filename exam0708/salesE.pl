@@ -34,3 +34,25 @@ forall(C1,C2):-
 	\+ ((C1,
 	     \+C2)).
 
+
+sellsOneForLessThan(T, MP, S, I, P):-
+	sellsFor(S, I, P),
+	typeOfItem(I, T),
+	P =< MP.
+
+
+equivalent(I1, I2):- 
+	equivalentItems(I1, I2)
+	;
+	equivalentItems(I1, I2).
+
+
+sellsEquivalentItemIn(I, C, EI, S):-
+	locatedIn(S, C),
+	inStock(S, I),
+	EI = I.
+
+sellsEquivalentItemIn(I, C, EI, S):-
+	locatedIn(S, C),
+	equivalent(EI, I),
+	sellsOneForLessThan().

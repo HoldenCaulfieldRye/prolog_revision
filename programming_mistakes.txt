@@ -1,6 +1,7 @@
 stupid mistakes:
 - not size(), not sizeof(), not len(), but length()
 - not append(List, A, New) but append(List, [A], New)
+- =< and >= (not >= or =<)
 - if complex, use helper predicates to break problem down
   sounds obvious, but all your practice has been on predicates
   which don't require helper ones, so you're not used to it!
@@ -65,3 +66,6 @@ for all solutions to G
 failures:
 - P7, flatten a nested list structure
 - P9 succeeded but took you ages
+- from 2ndyear:
+       in_range(Min, Max, N)
+       all_female_cell()
